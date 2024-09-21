@@ -3,9 +3,11 @@ const mongoose = require('mongoose');
 const userSchema = mongoose.Schema({
     fullname: String,
     email: String,
-    password: String,
+    password:{
+        type: String,
+        default: 'abcd',
+    },
     cart: [],
-    isAdmin: Boolean,
     orders: [],
     contact: Number,
     picture: String
