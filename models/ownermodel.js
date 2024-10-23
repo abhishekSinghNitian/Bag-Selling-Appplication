@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+const mongoose = require('../config/mongoose-connection');
 
 const ownerSchema = mongoose.Schema({
     fullname:{

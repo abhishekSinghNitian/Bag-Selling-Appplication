@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+const mongoose = require('../config/mongoose-connection');
 
 const userSchema = mongoose.Schema({
     fullname: String,
@@ -7,7 +7,12 @@ const userSchema = mongoose.Schema({
         type: String,
         default: 'abcd',
     },
-    cart: [],
+    cart: [
+        {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'product'
+        },
+    ],
     orders: [],
     contact: Number,
     picture: String
